@@ -31,7 +31,7 @@ return {
           'pyright',
           'svelte',
           'tailwindcss',
-          'tsserver',
+          'ts_ls',
         },
       })
 
@@ -66,7 +66,7 @@ return {
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities() -- used to enable autocompletion
 
-      require('mason-lspconfig').setup_handlers({
+      require('mason-lspconfig').setup({
         function(server_name)
           lspconfig[server_name].setup({
             capabilities = capabilities,
