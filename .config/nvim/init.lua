@@ -1,2 +1,3 @@
-require('rebecca.core')
-require('rebecca.lazy')
+require('config.options')
+require('config.keybinds')
+require('config.lazy')
