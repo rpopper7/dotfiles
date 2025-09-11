@@ -1,4 +1,4 @@
--- cross-platform LSP and lint installer
+-- tool for installing LSPs, linters, and formatters
 return {
     "mason-org/mason.nvim",
     dependencies = { 'mason-org/mason-lspconfig.nvim' },
@@ -8,10 +8,12 @@ return {
 
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls" -- lua language server
+                "lua_ls" -- lua LSP
             },
             automatic_installation = true,
         })
+
+        -- NOTE: not sure this LSP stuff has to be here in neovim 0.11
 
         vim.diagnostic.config({
             virtual_text = { current_line = true }, -- show inline messages
@@ -50,6 +52,5 @@ return {
             }
         }
         vim.lsp.enable('lua_ls')
-
     end,
 }
