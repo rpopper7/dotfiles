@@ -1,19 +1,30 @@
--- tool for installing LSPs, linters, and formatters
 return {
-    "mason-org/mason.nvim",
-    dependencies = { 'mason-org/mason-lspconfig.nvim' },
+    "mason-org/mason.nvim", -- tool for installing LSP (language server protocols)
+    dependencies = {
+        'mason-org/mason-lspconfig.nvim', -- bridge mason with LSP names
+        'WhoIsSethDaniel/mason-tool-installer.nvim', -- installer for non-LSP tools
+    },
     build = ":MasonUpdate",
     config = function()
         require("mason").setup()
 
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls" -- lua LSP
+                "lua_ls" -- Lua LSP
             },
             automatic_installation = true,
         })
 
-        -- NOTE: not sure this LSP stuff has to be here in neovim 0.11
+        require("mason-tool-installer").setup({
+            ensure_installed = {
+                "selene", -- Lua linter
+                "stylua", -- Lua formatter
+            },
+            auto_update = false,
+        })
+
+        -- NOTE: not sure this LSP stuff really has to be here in neovim 0.11
+        -- I should probaby move it somewhere else tbh
 
         vim.diagnostic.config({
             virtual_text = { current_line = true }, -- show inline messages
