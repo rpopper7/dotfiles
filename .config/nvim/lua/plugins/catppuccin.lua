@@ -7,7 +7,7 @@ return {
     opts = {
 	    flavour = "auto", -- auto switch flavor based on bg
 	    background = { -- flavors include latte, frappe, macchiato, mocha
-	        light = "macchiato", 
+	        light = "macchiato",
 	        dark = "mocha",
 	    },
 	    term_colors = true, -- override terminal colors
