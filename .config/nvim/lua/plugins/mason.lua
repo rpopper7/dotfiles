@@ -7,61 +7,53 @@ return {
     build = ":MasonUpdate",
     config = function()
         require("mason").setup()
-
-        require("mason-lspconfig").setup({
+        require("mason-lspconfig").setup {
             ensure_installed = {
                 "lua_ls" -- Lua LSP
             },
             automatic_installation = true,
-        })
+        }
 
-        require("mason-tool-installer").setup({
+        require("mason-tool-installer").setup {
             ensure_installed = {
                 "selene", -- Lua linter
                 "stylua", -- Lua formatter
             },
             auto_update = false,
-        })
+        }
 
         -- NOTE: not sure this LSP stuff really has to be here in neovim 0.11
-        -- I should probaby move it somewhere else tbh
+        -- I should probaby move it somewhere else tbh 
 
-        vim.diagnostic.config({
+        -- Diagnostic configuration
+        vim.diagnostic.config {
             virtual_text = { current_line = true }, -- show inline messages
             underline = true, -- underline problematic text
             update_in_insert = false, -- don't update diagnostics while typing
             severity_sort = true, -- sort diagnostics by severity
-            signs = true, -- show signs in gutter
-        })
-
-        -- custom signs in gutter
-        vim.diagnostic.config({
             signs = {
+                -- custom gutter signs
                 text = {
                     [vim.diagnostic.severity.ERROR] = "",
                     [vim.diagnostic.severity.WARN] = "",
                     [vim.diagnostic.severity.INFO] = "",
                     [vim.diagnostic.severity.HINT] = "",
-                },
-            },
-        })
-
-        -- lua setup
-        vim.lsp.config['lua_ls'] = {
-            cmd = { 'lua-language-server' },
-            filetypes = { 'lua' },
-            root_markers = { { '.luarc.json', '.luarc.jsonc'}, '.git' },
-            settings = {
-                Lua = {
-                    runtime = {
-                        version = 'LuaJIT',
-                    },
-                    diagnostics = {
-                        globals = { "vim" }
-                    }
                 }
             }
         }
-        vim.lsp.enable('lua_ls')
+
+        -- Lua LSP specific configuration
+        vim.lsp.config("lua_ls", {
+            cmd = { 'lua-language-server' },
+            filetypes = { 'lua' },
+            root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
+            settings = {
+                Lua = {
+                    runtime = { version = 'LuaJIT' },
+                    diagnostics = { globals = { "vim" } }
+                },
+            },
+        })
+        vim.lsp.enable("lua_ls")
     end,
 }
