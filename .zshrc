@@ -7,6 +7,8 @@ fi
 
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
+# Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Theme
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme

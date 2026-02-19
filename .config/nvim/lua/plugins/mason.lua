@@ -9,7 +9,8 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup {
             ensure_installed = {
-                "lua_ls" -- Lua LSP
+                "lua_ls",  -- Lua LSP
+                "ts_ls",   -- TypeScript/JavaScript LSP
             },
             automatic_installation = true,
         }
@@ -55,5 +56,6 @@ return {
             },
         })
         vim.lsp.enable("lua_ls")
+        vim.lsp.enable("ts_ls")
     end,
 }
