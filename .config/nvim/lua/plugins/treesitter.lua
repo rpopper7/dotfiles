@@ -7,7 +7,6 @@ return {
 	require('nvim-treesitter.configs').setup({
 	    highlight = { enable = true },
 	    indent = { enable = true },
-	    autotag = { enable = true },
 	    ensure_installed = { "css", "gitignore", "html", "javascript", "lua", "tsx", "typescript" },
 	    auto_install = false,
 	})
