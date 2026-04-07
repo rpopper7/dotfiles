@@ -1,9 +1,9 @@
 return {
     -- fast & easy to configure statusline (at bottom of screen)
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
     opts = {
-	    theme = "catppuccin",
+	    theme = "catppuccin-nvim",
     },
     config = function(_, opts)
 	require("lualine").setup({

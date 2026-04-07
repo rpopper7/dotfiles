@@ -33,6 +33,6 @@ vim.o.smartcase = true -- don't ignore case if search includes capitals
 vim.o.hlsearch = true -- set highlight on search
 
 -- GUI
-vim.termguicolors = true -- render the full range of theme colors instead of estimating
+vim.o.termguicolors = true -- render the full range of theme colors instead of estimating
 
 
