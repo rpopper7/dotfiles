@@ -1,0 +1,11 @@
+# Files stow should NOT symlink into ~ (this replaces stow's built-in list, so it's repeated here)
+\.git
+\.gitignore
+\.gitmodules
+\.stow-local-ignore
+\.DS_Store
+^/README.*
+^/LICENSE.*
+
+# Claude Code settings for working in this repo, not for ~
+^/\.claude

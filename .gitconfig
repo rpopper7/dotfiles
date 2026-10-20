@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = rpopper7
+	email = 14946531+rpopper7@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJaVfXKPx5paU85NOyWAAmH/1E7nmZthX7eohs1jcdme
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

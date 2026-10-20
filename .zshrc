@@ -7,8 +7,6 @@ fi
 
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
-# Java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Theme
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
@@ -25,9 +23,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion
 
-# Ruby version manager - make sure this is the lastl PATH variable change
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # 1Password SSH agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
@@ -41,6 +36,6 @@ alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
 alias gl='git log --oneline --decorate --color'
-alias diff='git diff'
+alias gd='git diff'
 alias push='git push'
 alias pull='git pull'

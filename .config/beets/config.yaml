@@ -1,0 +1,21 @@
+directory: "~/Library/Mobile Documents/com~apple~CloudDocs/All Devices Sync/Music"
+library: ~/.config/beets/library.db
+
+plugins: musicbrainz fetchart embedart fromfilename edit info web chroma mbsync vocadb
+
+vocadb:
+  prefer_romaji: true
+
+paths:
+  collection:library romanized:1: Library/$romaji_albumartist/$romaji_album/$track $romaji_title ($title)
+  collection:library singleton:true: Library/Non-Album/$artist/$title
+  collection:library comp:true: Library/Compilations/$album/$track $title
+  collection:library: Library/$albumartist/$album/$track $title
+  romanized:1: Unorganized-tagged/$romaji_albumartist/$romaji_album/$track $romaji_title ($title)
+  singleton:true: Unorganized-tagged/Non-Album/$artist/$title
+  comp:true: Unorganized-tagged/Compilations/$album/$track $title
+  default: Unorganized-tagged/$albumartist/$album/$track $title
+
+import:
+  move: yes
+  copy: no

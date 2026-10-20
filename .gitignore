@@ -1,2 +1,9 @@
 .DS_Store
 .config/jgit/
+
+# beets: track the config, not the database/backups/tokens
+.config/beets/*
+!.config/beets/config.yaml
+
+# created automatically by iTerm2
+.config/iterm2/cc-status
