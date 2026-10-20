@@ -12,7 +12,7 @@ return {
                 "lua_ls",  -- Lua LSP
                 "ts_ls",   -- TypeScript/JavaScript LSP
             },
-            automatic_installation = true,
+            automatic_enable = false, -- servers are enabled in config/lsp.lua
         }
 
         require("mason-tool-installer").setup {

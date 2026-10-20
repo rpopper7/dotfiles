@@ -5,11 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
-
 # Theme
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Plugins

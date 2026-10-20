@@ -6,4 +6,5 @@
 !.config/beets/config.yaml
 
 # created automatically by iTerm2
+.config/iterm2/AppSupport
 .config/iterm2/cc-status

@@ -56,11 +56,14 @@ Config built on [lazy.nvim](https://github.com/folke/lazy.nvim) with the followi
 - **Lualine** — statusline
 - **Telescope** — fuzzy finder
 - **Treesitter** — syntax highlighting and indentation
-- **Mason** — LSP/linter/formatter installer
-- **nvim-cmp** — autocompletion
+- **Mason** (+ mason-lspconfig, mason-tool-installer) — installs `lua_ls`, `ts_ls`, `selene`, `stylua`
+- **blink.cmp** — autocompletion
 - **nvim-autopairs** — auto-close brackets
 - **nvim-ts-autotag** — auto-close HTML/JSX tags
 - **todo-comments** — highlight TODO/FIXME comments
+
+Language servers (LSP) for **Lua** (`lua_ls`) and **TypeScript/JavaScript** (`ts_ls`) are configured in
+`lua/config/lsp.lua`, using Neovim's built-in `vim.lsp.config`/`vim.lsp.enable` (Neovim 0.11+).
 
 ### Zsh
 Zsh loads these in order: `.zshenv` → `.zprofile` → `.zshrc`.

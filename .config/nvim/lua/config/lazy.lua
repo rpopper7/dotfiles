@@ -22,5 +22,6 @@ require("lazy").setup({
 	{ import = "plugins" },
     },
     checker = { enabled = true }, -- automatically check for plugin updates
+    rocks = { enabled = false }, -- no plugins need luarocks
     change_detection = { notify = false },
 })
